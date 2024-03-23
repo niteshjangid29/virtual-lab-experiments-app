@@ -2,8 +2,11 @@ package com.example.wheatstone;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -15,16 +18,26 @@ public class SimulatorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Intent intent = getIntent();
+        String simUrl = intent.getStringExtra("simulatorUrl");
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+//        String simTitle = intent.getStringExtra("simulatorTitle");
+
+//        setTitle(simTitle);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simulator);
         mywebView=(WebView) findViewById(R.id.webview);
         mywebView.setWebViewClient(new WebViewClient());
-        mywebView.loadUrl("https://shivamchs.github.io/Wheatstone/");
+        mywebView.loadUrl(simUrl);
         WebSettings webSettings=mywebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
-        mywebView.setInitialScale(120);
+        mywebView.setInitialScale(112);
     }
 
     public class mywebClient extends WebViewClient {

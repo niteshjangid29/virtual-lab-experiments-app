@@ -34,7 +34,6 @@
         <activity
             android:name=".SimulatorActivity"
             android:exported="true"
-            android:label="WheatStone Bridge"
             android:screenOrientation="landscape">
 
             <!-- <intent-filter> -->

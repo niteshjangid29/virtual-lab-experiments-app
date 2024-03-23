@@ -83,7 +83,7 @@
                 />
 
             <TextView
-                android:id="@+id/theory_text"
+                android:id="@+id/theory1_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:justificationMode="inter_word"
@@ -98,9 +98,10 @@
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="350dp"
-                app:srcCompat="@drawable/wheatstone1"
+                app:srcCompat="@drawable/wheatstone_bridge1"
                 app:layout_constraintTop_toBottomOf="@+id/theory_text"
                 app:layout_constraintStart_toStartOf="@+id/theory_text"
+                android:paddingVertical="10dp"
                 android:layout_gravity="center" />
 
             <TextView
@@ -155,7 +156,7 @@
                 android:textStyle="bold"
                 />
             <Button
-                android:id="@+id/wheatstone_sim"
+                android:id="@+id/simulatorBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
